@@ -11,7 +11,15 @@
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-gray-200">
+    <div class="max-w-7xl bg-white mx-auto px-4 sm:px-6 lg:px-8">
+      <%= render 'layouts/navigation' %>
+    </div>
+    <div class="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
+      <%= yield %>
+    </div>
+    <div class="max-w-7xl bg-white mx-auto px-4 sm:px-6 lg:px-8">
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
