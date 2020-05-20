@@ -5,6 +5,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="description" content="<%= meta_description(yield :meta_description) %>">
+      <meta property="og:title" content="<%= page_title(yield :title) %>">
+      <meta property="og:description" content="<%= meta_description(yield :meta_description) %>">
+      <% if content_for?(:og_image) %>
+        <meta property="og:image" content="<%= yield :og_image %>">
+      <% else %>
+        <meta property="og:image" content="https://www.diablovalley.tech/dvti_full_logo.png">
+      <% end %>
+      <meta content='en_US' property='og:locale'>
+      <meta content='website' property='og:type'>
+      <meta content='https://www.diablovalley.tech/' property='og:url'>
+      <meta content='Diablo Valley Tech Initiative' property='og:site_name'>
+      <meta content="<%= meta_description(yield :meta_description) %>" property='og:title'>
+      <meta content='summary_large_image' name='twitter:card'>
+      <meta content='https://www.diablovalley.tech/dvti_full_logo.png' name='twitter:image:src'>
+      <meta content="<%= page_title(yield :title) %>" name='twitter:title'>
+      <meta content="<%= meta_description(yield :meta_description) %>" name='twitter:description'>
+      <meta content='Diablo Valley Tech Initiative' name='twitter:creator'>
+      <meta content='https://www.diablovalley.tech' name='twitter:domain'>
+
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
