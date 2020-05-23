@@ -4,13 +4,10 @@
       <div>
         <%= image_tag "dvti_full_logo.png", class: "h-12 w-auto", alt: 'DVTI' %>
         <h2 class="mt-6 text-3xl leading-9 font-extrabold text-gray-900">
-          Sign in to your account
+          Register for DVTI
         </h2>
         <p class="mt-2 text-sm leading-5 text-gray-600 max-w">
-          Or
-          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
-            register as a business | register as a resident
-          </a>
+          Or <%= link_to 'log in now', new_user_session_path, class: "font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150" %>
         </p>
       </div>
 
@@ -67,6 +64,6 @@
     </div>
   </div>
   <div class="hidden lg:block relative w-0 flex-1">
-    <img class="absolute inset-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1505904267569-f02eaeb45a4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1908&q=80" alt="" />
+    <img class="absolute inset-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1504284298478-0c8b594e7fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1284&q=80" alt="" />
   </div>
 </div>
