@@ -31,13 +31,13 @@
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-green-100">
-    <div class="max-w-7xl bg-white mx-auto px-4 sm:px-6 lg:px-8">
+  <body class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <%= render 'layouts/navigation' %>
     </div>
-    <div class="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
-      <%= yield %>
-    </div>
+
+    <%= yield %>
+
     <div class="max-w-7xl bg-white mx-auto px-4 sm:px-6 lg:px-8">
       <%= render 'layouts/footer' %>
     </div>
