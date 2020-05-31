@@ -10,10 +10,66 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_154546) do
+ActiveRecord::Schema.define(version: 2020_05_31_192321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string "domain"
+    t.string "title"
+    t.string "description"
+    t.string "keywords"
+    t.string "location_state"
+    t.string "location_city"
+    t.integer "employee_number_from"
+    t.integer "employee_number_to"
+    t.integer "sic_code"
+    t.float "annual_revenue"
+    t.string "social_linkedin"
+    t.string "social_facebook"
+    t.string "social_twitter"
+    t.string "found_emails", array: true
+    t.string "legal_name"
+    t.integer "company_type"
+    t.string "tags", array: true
+    t.string "industry_group"
+    t.string "industry"
+    t.string "sub_industry"
+    t.integer "founded_year"
+    t.string "location_street_number"
+    t.string "location_street_name"
+    t.string "location_zip"
+    t.string "location_state_code"
+    t.string "location_country"
+    t.string "location_country_code"
+    t.float "lat"
+    t.float "lng"
+    t.string "logo_url"
+    t.string "ticker"
+    t.integer "alexa_us_rank"
+    t.integer "alexa_global_rank"
+    t.integer "google_rank"
+    t.integer "employee_number"
+    t.float "market_cap"
+    t.float "raised"
+    t.integer "fortune_1000_rank"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_companies_on_slug", unique: true
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
 
   create_table "signups", force: :cascade do |t|
     t.string "email"

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :companies
   root 'home#index'
 
   devise_for :users
@@ -16,6 +15,7 @@ Rails.application.routes.draw do
   get :network, to: 'home#network'
 
   resources :signups, only: [:new, :create]
+  resources :companies, only: [:index, :show]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
