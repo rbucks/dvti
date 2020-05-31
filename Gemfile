@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem "google-cloud-storage", "~> 1.11", require: false
 gem 'friendly_id', '~> 5.2.4'
+gem 'kaminari'
+gem 'pg_search'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
