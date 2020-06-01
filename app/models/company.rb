@@ -7,5 +7,4 @@ class Company < ApplicationRecord
 
   enum status: [:unknown, :closed, :active]
   enum company_type: [:is_private, :is_public, :is_delisted]
-
 end
