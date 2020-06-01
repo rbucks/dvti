@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_192321) do
+ActiveRecord::Schema.define(version: 2020_06_01_045927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,8 @@ ActiveRecord::Schema.define(version: 2020_05_31_192321) do
     t.string "social_twitter"
     t.string "found_emails", array: true
     t.string "legal_name"
-    t.integer "company_type"
+    t.integer "company_type", default: 0
     t.string "tags", array: true
-    t.string "industry_group"
     t.string "industry"
     t.string "sub_industry"
     t.integer "founded_year"
@@ -57,6 +56,9 @@ ActiveRecord::Schema.define(version: 2020_05_31_192321) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.integer "status", default: 0
+    t.text "industry_groups", array: true
+    t.text "industries", array: true
     t.index ["slug"], name: "index_companies_on_slug", unique: true
   end
 

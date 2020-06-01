@@ -5,4 +5,7 @@ class Company < ApplicationRecord
   extend FriendlyId
   friendly_id :legal_name, use: :slugged
 
+  enum status: [:unknown, :closed, :active]
+  enum company_type: [:is_private, :is_public, :is_delisted]
+
 end
