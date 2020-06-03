@@ -26,7 +26,7 @@
   <ul>
     <% @companies.each do |company| %>
     <li>
-      <a href="https://www.<%= company.domain %>" class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out" target="_blank">
+      <span class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out" target="_blank">
         <div class="flex items-center px-4 py-4 sm:px-6">
           <div class="min-w-0 flex-1 flex items-center">
             <div class="flex-shrink-0">
@@ -34,12 +34,12 @@
             </div>
             <div class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4">
               <div>
-                <div class="text-sm leading-5 font-medium text-green-600 truncate"><%= company.legal_name %></div>
+                <div class="text-sm leading-5 font-medium text-green-600 truncate"><%= link_to company.legal_name, company.domain.present? ? "https://www.#{company.domain}" : '#', target: :blank %></div>
                 <div class="mt-2 flex items-center text-sm leading-5 text-gray-500">
                   <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                   </svg>
-                  <span class="truncate"><%= company.location_city %></span>
+                  <span class="truncate"><%= link_to company.location_city, search_companies_path(q: company.location_city) %></span>
                 </div>
               </div>
               <div class="hidden md:block">
@@ -52,9 +52,11 @@
                   </div>
                   <div class="mt-2 flex items-center text-sm leading-5 text-gray-500">
                     <% company.industries.each do |industry| %>
-                      <span class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 mr-2 rounded text-xs">
-                        <%= industry %>
-                      </span>
+                      <%= link_to search_companies_path(q: industry) do %>
+                        <span class="bg-green-500 hover:bg-green-700 text-white py-1 px-2 mr-2 rounded text-xs">
+                          <%= industry %>
+                        </span>
+                      <% end %>
                     <% end %>
                   </div>
                 </div>
@@ -67,7 +69,7 @@
             </svg>
           </div>
         </div>
-      </a>
+      </span>
     </li>
     <% end %>
   </ul>
