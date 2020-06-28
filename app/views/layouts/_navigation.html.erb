@@ -2,7 +2,7 @@
     <div class="flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10">
       <div class="lg:w-0 lg:flex-1">
         <%= link_to root_path, class: 'flex' do %>
-          <svg class="h-8 w-auto sm:h-10 text-green-800 hover:text-green-900" fill="currentColor" viewBox="0 0 20 20"><path d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+          <%= image_tag 'dvti_full_logo.png', class: "h-8 w-auto sm:h-10" %>
         <% end %>
       </div>
       <div class="-mr-2 -my-2 md:hidden">
@@ -12,8 +12,9 @@
           </svg>
         </button>
       </div>
-      <nav class="hidden md:flex space-x-10">
+      <nav class="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
 
+<!--
         <div x-data="{ flyoutMenuOpen: false }" @click.away="flyoutMenuOpen = false" class="relative">
           <button type="button" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }" class="group text-gray-500 inline-flex items-center space-x-2 text-base leading-6 font-medium hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
             <span>For Residents</span>
@@ -95,10 +96,12 @@
             </div>
           </div>
         </div>
+-->
+        <%= link_to "Look Who's Already Here", companies_path, class: "whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border-4 border-blue-100 border-solid text-base leading-6 font-medium rounded-md text-gray-600 bg-blue-50 hover:bg-blue-100 focus:outline-none focus:border-blue-200 focus:shadow-outline-blue active:bg-blue-200 transition ease-in-out duration-150" %>
 
-        <%= link_to 'About DVTI', about_path, class: "text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150" %>
+        <%= link_to 'About DVTI', about_path, class: "whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900" %>
 
-        <%= link_to 'Contact DVTI', contact_path, class: "text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150" %>
+        <%= link_to 'Contact DVTI', contact_path, class: "whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900" %>
       </nav>
       <div class="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
         <%= link_to 'Log in', new_user_session_path, class: "whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900" %>
@@ -114,7 +117,7 @@
           <div class="pt-5 pb-6 px-5 space-y-6">
             <div class="flex items-center justify-between">
               <%= link_to root_path, class: 'flex' do %>
-                <svg class="h-8 w-auto sm:h-10 text-green-800" fill="currentColor" viewBox="0 0 20 20"><path d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                <%= image_tag 'dvti_mark.png', class: "h-8 w-auto sm:h-10 text-green-800" %>
               <% end %>
               <div class="-mr-2">
                 <button @click="mobileMenuOpen = false" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
