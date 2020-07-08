@@ -103,12 +103,18 @@
 
         <%= link_to 'Contact DVTI', contact_path, class: "whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900" %>
       </nav>
+      <% unless user_signed_in? %>
+        <div class="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
+          <%= link_to 'Log in', new_user_session_path, class: "whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900" %>
+          <span class="inline-flex rounded-md shadow-sm">
+            <%= link_to 'Sign up', new_user_registration_path, class: "whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition ease-in-out duration-150" %>
+          </span>
+        </div>
+      <% else %>
       <div class="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
-        <%= link_to 'Log in', new_user_session_path, class: "whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900" %>
-        <span class="inline-flex rounded-md shadow-sm">
-          <%= link_to 'Sign up', new_user_registration_path, class: "whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition ease-in-out duration-150" %>
-        </span>
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900" %>
       </div>
+      <% end %>
     </div>
 
     <div x-description="Mobile menu, show/hide based on mobile menu state." x-show="mobileMenuOpen" x-transition:enter="duration-200 ease-out" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="z-40 absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
