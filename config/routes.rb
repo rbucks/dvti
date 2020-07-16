@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get :network, to: 'home#network'
 
   resources :signups, only: [:new, :create]
+  resources :contacts, only: [:new, :create]
   resources :companies, only: [:index, :show] do
     collection do
       get :search

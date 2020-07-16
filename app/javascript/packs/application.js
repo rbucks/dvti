@@ -4,12 +4,11 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("jquery-ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
 require("alpinejs")
+require('jquery')
 import '../stylesheets/application.scss'
 
 
