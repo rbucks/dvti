@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("alpinejs")
 require('jquery')
+require('cookieconsent')
 import '../stylesheets/application.scss'
 
 

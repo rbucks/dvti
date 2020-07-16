@@ -29,7 +29,7 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
   </head>
 
   <body class="bg-white">
@@ -43,5 +43,9 @@
     <div class="max-w-7xl bg-white mx-auto px-4 sm:px-6 lg:px-8">
       <%= render 'layouts/footer' %>
     </div>
+
+    <% if content_for?(:javascripts) %>
+      <%= yield(:javascripts) %>
+    <% end %>
   </body>
 </html>
