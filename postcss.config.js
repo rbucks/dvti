@@ -1,8 +1,8 @@
-module.exports = {
+let environment = {
   plugins: [
+    require('tailwindcss')('./app/javascript/stylesheets/tailwind.config.js'),
+    require('@tailwindcss/ui'),
     require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
     require('postcss-flexbugs-fixes'),
     require('postcss-preset-env')({
       autoprefixer: {
@@ -11,4 +11,6 @@ module.exports = {
       stage: 3
     })
   ]
-}
+};
+
+module.exports = environment;

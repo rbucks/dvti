@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get :index, to: 'home#index'
+  get :privacy, to: 'home#privacy'
   get :contact, to: 'home#contact'
   get :about, to: 'home#about'
   get :move_here, to: 'home#move_here'

@@ -6,6 +6,9 @@ class HomeController < ApplicationController
   def about
   end
 
+  def privacy
+  end
+
   def move_here
   end
 

@@ -1,3 +1,19 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.article {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif !important;
+}
+
+.article li {
+  margin-bottom: 15px;
+}
+
+.article p {
+  margin-bottom: 15px;
+}
+
+div.article img {
+  width: 100%;
+}
