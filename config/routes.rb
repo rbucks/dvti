@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   get :index, to: 'home#index'
   get :privacy, to: 'home#privacy'
-  get :contact, to: 'home#contact'
   get :about, to: 'home#about'
   get :move_here, to: 'home#move_here'
   get :find_job, to: 'home#find_job'
